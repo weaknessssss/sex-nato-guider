@@ -15,8 +15,8 @@ import {
   Menu,
   X
 } from 'lucide-react';
-import { getTacticalAdvice } from './services/geminiService';
-import { AIResponse, NavItem } from './types';
+import { getTacticalAdvice } from './services/geminiService.ts';
+import { AIResponse, NavItem } from './types.ts';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -95,7 +95,7 @@ const Hero = () => (
 const Operations = () => (
   <section id="operations" className="py-24 bg-zinc-950 border-y border-white/5">
     <div className="max-w-7xl mx-auto px-4">
-      <div className="mb-16">
+      <div className="mb-16 text-center md:text-left">
         <h2 className="text-zinc-600 text-[10px] font-black uppercase tracking-[0.5em] mb-4">Tactical Engagement Models</h2>
         <h3 className="text-4xl md:text-6xl font-black text-white uppercase italic">Бойові <span className="rainbow-text">Сценарії</span></h3>
       </div>
@@ -116,11 +116,11 @@ const Operations = () => (
           { 
             title: "Deep Recon", 
             subtitle: "Стратегічний Оральний Бріфінг", 
-            desc: "Розвідка чутливих зон противника (партнера) з використанням передових технік маскування та стимуляції.", 
+            desc: "Розвідка чутливих зон партнера з використанням передових технік маскування та стимуляції.", 
             icon: <Maximize2 className="text-blue-500 w-10 h-10" /> 
           }
         ].map((op, i) => (
-          <div key={i} className="bg-zinc-900/50 p-10 border border-white/5 hover:border-pink-500/50 transition-all group">
+          <div key={i} className="bg-zinc-900/50 p-10 border border-white/5 hover:border-pink-500/50 transition-all group rounded-xl">
             <div className="mb-8">{op.icon}</div>
             <h4 className="text-xs font-black text-pink-500 uppercase tracking-widest mb-2">{op.title}</h4>
             <h5 className="text-2xl font-black text-white uppercase mb-4 italic">{op.subtitle}</h5>
