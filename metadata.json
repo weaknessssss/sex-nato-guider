@@ -1,0 +1,7 @@
+{
+  "name": "Rainbow Shield - NATO Tactical Intimacy",
+  "description": "Multi-spectral joint operations and deep penetration tactics. Lviv's premier NATO-standard instructor for all-spectrum maneuvers.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
