@@ -3,7 +3,9 @@ import { GoogleGenAI } from "@google/genai";
 import { AIResponse } from "../types";
 
 export const getTacticalAdvice = async (query: string): Promise<AIResponse> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || "" });
+  // Use defensive check for process.env.API_KEY
+  const apiKey = typeof process !== 'undefined' ? process.env.API_KEY : '';
+  const ai = new GoogleGenAI({ apiKey: apiKey || "" });
   
   try {
     const response = await ai.models.generateContent({

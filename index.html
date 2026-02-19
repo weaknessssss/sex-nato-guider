@@ -5,8 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rainbow Shield | NATO All-Spectrum Penetration Tactics</title>
+    <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <script>
+        // Shim to prevent "process is not defined" error in some environments
+        if (typeof window.process === 'undefined') {
+            window.process = { env: { API_KEY: '' } };
+        }
+    </script>
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .rainbow-text {
@@ -18,7 +25,7 @@
         }
         @keyframes flow { to { background-position: 200% center; } }
         .glow-rainbow:hover {
-            box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+            box-shadow: 0 0 30px rgba(236, 72, 153, 0.4);
             border-color: #ec4899;
         }
     </style>
@@ -30,15 +37,15 @@
     "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
     "@google/genai": "https://esm.sh/@google/genai@1.42.0",
     "lucide-react": "https://esm.sh/lucide-react@0.475.0",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
   }
 }
 </script>
 </head>
 <body class="bg-zinc-950 text-zinc-100 selection:bg-pink-500 selection:text-white">
     <div id="root"></div>
-    <!-- Entry point script for the application -->
-    <script type="module" src="index.tsx"></script>
+    <!-- The platform automatically handles index.tsx as an entry point if it exists -->
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>
